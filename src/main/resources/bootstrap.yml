@@ -12,7 +12,7 @@ spring:
 logging:
   file: logs/cas-management.log
 info:
-  name: 接入管理系统
+  name: connect with configure server
 health:
   config:
     enable: true
