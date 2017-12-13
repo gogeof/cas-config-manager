@@ -4,6 +4,11 @@
 mvn clean package
 ```
 
+## 运行
+```cmd
+java -jar cas-management.war 
+```
+
 ## 对接mongodb后需要创建cas-config需要的账户
 ```cmd
 #启动
