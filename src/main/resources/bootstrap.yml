@@ -3,7 +3,7 @@ spring:
     name: cas-management
   cloud:
     config:
-      enable: true
+      enable: false
       watch:
         enabled: true
       fail-fast: true

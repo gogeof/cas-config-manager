@@ -1,34 +1,50 @@
-## 打包
-
+## package
 ```cmd
 mvn clean package
 ```
 
-## 运行
+## run
 ```cmd
 java -jar cas-management.war 
 ```
 
-## 对接mongodb后需要创建cas-config需要的账户
+# linux use config, for latter windows follow
+## install mongodb
 ```cmd
-#启动
->mongod
+# download and untar
+curl -O https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.0.6.tgz
+tar -zxvf mongodb-linux-x86_64-3.0.6.tgz
+# move to dest dir
+sudo mv  mongodb-linux-x86_64-3.0.6/ /usr/local/mongodb
+# edit sysconfig
+vi /etc/profile
+# add and make it works
+export PATH=/usr/local/mongodb/bin:$PATH
+source /etc/progile
+```
 
-#登录
+## start and stop mongodb
+```cmd
+# start
+mongod --dbpath ~/data
+# stop
+mongod --dbpath ~/data --shutdown
+```
+
+## create users of mongodb for cas-config account needed
+```cmd
+# start
+>mongod --dbpath ~/data
+# login
 >mongo
-
-#切换数据库
+# use admin database
 >use admin
-
-#新增管理员
+# add new admin user
 >db.createUser({user: "admin",pwd: "123456",roles:[{role:"userAdminAnyDatabase", db: "admin" } ]})
-
-#切换数据库
+# use cas-mongo-database database
 >use cas-mongo-database
-
-# 新增用户
+# add user
 >db.createUser({user: "cas-config",pwd: "123456",roles: [ { role: "readWrite", db: "cas-mongo-database" }]})
-
-#重启并开启认证
->mongod --auth
+# stop and then restart with auth
+>mongod --dbpath ~/data --auth
 ```
