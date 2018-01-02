@@ -1,13 +1,13 @@
 {
   "@class" : "org.jasig.cas.services.RegexRegisteredService",
-  "serviceId" : "^http://localhost:8081/cas-management",
-  "name" : "Legacy",
-  "id" : 100,
-  "description" : "This service definition authorizes the legacy jasig/cas URL. It is solely here to demonstrate service backwards-compatibility",
+  "serviceId" : "^http://cas.example.org:8081/cas-management/manage.html",
+  "name" : "Services Management Web Application",
+  "id" : 11000001,
+  "description" : "Services Management Web Application",
   "proxyPolicy" : {
     "@class" : "org.jasig.cas.services.RefuseRegisteredServiceProxyPolicy"
   },
-  "evaluationOrder" : 100,
+  "evaluationOrder" : 10000,
   "usernameAttributeProvider" : {
     "@class" : "org.jasig.cas.services.DefaultRegisteredServiceUsernameProvider"
   },
