@@ -64,33 +64,31 @@
             <type>war</type>
             <scope>runtime</scope>
         </dependency>
-    	<!--STEP2 引入数据库认证相关 start-->
-        <dependency>
-            <groupId>org.apereo.cas</groupId>
-            <artifactId>cas-server-support-mongo-service-registry</artifactId>
-            <version>${cas.version}</version>
-        </dependency>
-        <!--数据库认证相关 end-->
         <!--支持json-->
         <dependency>
             <groupId>org.apereo.cas</groupId>
             <artifactId>cas-server-support-json-service-registry</artifactId>
             <version>${cas.version}</version>
         </dependency>
+        <!-- support jpa-->
+        <dependency>
+            <groupId>org.apereo.cas</groupId>
+            <artifactId>cas-server-support-jpa-service-registry</artifactId>
+            <version>${cas.version}</version>
+        </dependency>
+        <!--STEP2 引入数据库认证相关 start-->
+        <dependency>
+            <groupId>org.apereo.cas</groupId>
+            <artifactId>cas-server-support-jdbc</artifactId>
+            <version>${cas.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apereo.cas</groupId>
+            <artifactId>cas-server-support-jdbc-drivers</artifactId>
+            <version>${cas.version}</version>
+        </dependency>
+        <!--数据库认证相关 end-->
     </dependencies>
-
-    <!--修改成国内的代理-->
-    <!--
-    <repositories>
-        <repository>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <id>maven2-release</id>
-            <url>http://uk.maven.org/maven2/</url>
-        </repository>
-    </repositories>
-    -->
 
     <pluginRepositories>
         <pluginRepository>
