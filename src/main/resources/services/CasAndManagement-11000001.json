@@ -1,10 +1,8 @@
 {
   "@class" : "org.apereo.cas.services.RegexRegisteredService",
-  "serviceId" : "^http://cas.example.org:8081/cas-management/manage.html",
+  "serviceId" : "^http://cas.example.org:8081/.*",
   "name" : "Services Management Web Application",
   "id" : 11000001,
-  "description" : "This service definition authorizes all application urls that support HTTPS and IMAPS protocols.",
+  "description" : "Services Management Web Application.",
   "evaluationOrder" : 10000
 }
-
-
